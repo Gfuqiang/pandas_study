@@ -1,6 +1,8 @@
 import pandas as pd
 import random
 
+
+# 使用series创建DataFrame
 # data = {k: chr(random.randint(65, 90)) for k in range(4) for _ in range(4)}
 # print(data)
 # k is index, v is value
