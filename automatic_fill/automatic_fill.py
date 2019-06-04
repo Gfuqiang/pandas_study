@@ -7,7 +7,7 @@ from datetime import datetime
 """
 
 df = pd.read_excel('./a.xlsx', skiprows=3, usecols='B:E', index_col=None,     # skiprows 重第几行开始读数据，  usecols 获取哪几列
-                   dtype={'id':str, 'name':str, 'data': str, 'date': str})    # nan行默认是float64类型 dtype指定为str
+                   dtype={'id': str, 'name': str, 'data': str, 'date': str})    # nan行默认是float64类型 dtype指定为str
 
 date_time = datetime.now()
 for i in df.index:
@@ -17,4 +17,7 @@ for i in df.index:
     df['date'].at[i] = date_time
 
 
+print(type(df['id']))   # df['id'] 获取的是Series
+print(type(df.at[1, 'id']))     # 一行一行的读取
+df.set_index('id', inplace=True)    # 设置id列为索引
 print(df)
