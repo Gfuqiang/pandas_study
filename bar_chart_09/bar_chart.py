@@ -1,6 +1,10 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
+"""
+柱状图
+"""
+
 df = pd.read_excel('./Students.xlsx')
 df.sort_values(by='Number', inplace=True, ascending=False)           # 排序
 print(df)
